@@ -1,0 +1,64 @@
+{
+  "aws": {
+    "region": "us-east-1",
+    "dynamodb": {
+      "tableName": "BlogPosts",
+      "billingMode": "PAY_PER_REQUEST"
+    },
+    "lambda": {
+      "runtime": "python3.8",
+      "timeout": 30,
+      "memorySize": 128
+    },
+    "s3": {
+      "bucketName": "your-blog-app-bucket",
+      "staticWebsiteHosting": true
+    },
+    "apiGateway": {
+      "stageName": "development",
+      "corsEnabled": true
+    }
+  },
+  "freeTierLimits": {
+    "lambda": {
+      "requestsPerMonth": 1000000,
+      "description": "1M Lambda requests/month free"
+    },
+    "dynamodb": {
+      "storageGB": 25,
+      "rcu": 25,
+      "wcu": 25,
+      "description": "25 GB DynamoDB storage + 25 RCU/WCU free"
+    },
+    "s3": {
+      "storageGB": 5,
+      "getRequests": 20000,
+      "putRequests": 2000,
+      "description": "5 GB S3 storage + 20K GET requests + 2K PUT requests free"
+    },
+    "cloudfront": {
+      "dataTransferGB": 50,
+      "requests": 2000000,
+      "description": "50 GB CloudFront data + 2M requests free"
+    },
+    "apiGateway": {
+      "callsPerMonth": 1000000,
+      "description": "1M API Gateway calls/month free"
+    }
+  },
+  "application": {
+    "maxPostLength": 10000,
+    "maxPostsPerPage": 50,
+    "autoDeleteAfterDays": 365,
+    "features": [
+      "Create blog posts",
+      "View all blog posts",
+      "Delete blog posts",
+      "Optional URL field",
+      "Responsive UI",
+      "Toast notifications",
+      "Loading states",
+      "Error handling"
+    ]
+  }
+}
